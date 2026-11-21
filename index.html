@@ -1,51 +1,363 @@
-<div class="card intro">
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h2>⚡🎄 Glædelig jul, Basse ❤️</h2>
+<title>Harry Potter Quiz til Basse</title>
 
-<p>
-Der findes Harry Potter-fans.
-</p>
+<style>
 
-<p>
-Og så findes der mennesker, der kan citere filmene ordret, ved hvilket kapitel Sirius Black første gang nævnes i bøgerne, og som stadig inderst inde håber, at Hogwarts-brevet en dag dukker op.
-</p>
+body{
+    font-family: Georgia, serif;
+    background: linear-gradient(to bottom,#1f1f1f,#4b2e83);
+    color:white;
+    margin:0;
+    padding:30px;
+}
 
-<p>
-Du har set filmene flere gange, end jeg kan tælle.
-</p>
+.container{
+    max-width:1000px;
+    margin:auto;
+}
 
-<p>
-Du har læst bøgerne så mange gange, at de nærmest burde tælle som en officiel uddannelse.
-</p>
+.card{
+    background:white;
+    color:black;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
 
-<p>
-Derfor er dette ikke en almindelig Harry Potter-quiz.
-</p>
+h1{
+    text-align:center;
+}
 
-<p>
-Det er en test af, om du virkelig er så stor en Harry Potter-nørd, som du påstår.
-</p>
+.question{
+    margin-bottom:25px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:20px;
+}
 
-<p>
-De første spørgsmål burde være nemme.
-<br>
-De sidste spørgsmål kan koste både huspoint og værdighed.
-</p>
+label{
+    display:block;
+    margin:8px 0;
+}
 
-<p>
-Så find tryllestaven frem, tag plads i Den Store Sal, og lad os én gang for alle finde ud af, om du er...
-</p>
+button{
+    width:100%;
+    padding:18px;
+    background:#740001;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
 
-<h3>⚡ En almindelig troldmand</h3>
+button:hover{
+    background:#5a0001;
+}
 
-<h3>🧙 Hogwarts-præfekt</h3>
+#result{
+    display:none;
+}
 
-<h3>📚 Professor i Magiens Historie</h3>
+.score{
+    font-size:42px;
+    font-weight:bold;
+    text-align:center;
+}
 
-<h3>👑 Eller den ubestridte Harry Potter-verdensmester</h3>
+</style>
+</head>
 
-<p style="text-align:center;font-weight:bold;font-size:1.2em;">
-Mischief Managed.
-</p>
+<body>
+
+<div class="container">
+
+<h1>⚡ Harry Potter Quiz ⚡</h1>
+
+<div class="card">
+
+<h2>🎄 Glædelig jul, Basse ❤️</h2>
+
+<p>Der findes Harry Potter-fans.</p>
+
+<p>Og så findes der mennesker, der kan citere filmene ordret, ved hvilket kapitel Sirius Black første gang nævnes i bøgerne, og som stadig håber, at Hogwarts-brevet en dag dukker op.</p>
+
+<p>Du har set filmene flere gange, end jeg kan tælle.</p>
+
+<p>Du har læst bøgerne så mange gange, at de nærmest burde tælle som en officielt godkendt uddannelse.</p>
+
+<p>Derfor er dette ikke en almindelig Harry Potter-quiz.</p>
+
+<p>Det er en test af, om du virkelig er så stor en Harry Potter-nørd, som du påstår.</p>
+
+<p>De første spørgsmål burde være overkommelige. De sidste spørgsmål kan koste både huspoint og værdighed.</p>
+
+<p>Så find tryllestaven frem og lad os finde ud af, hvem du egentlig er...</p>
+
+<p>⚡ En almindelig troldmand</p>
+<p>🧙 Hogwarts-præfekt</p>
+<p>📚 Professor i Magiens Historie</p>
+<p>👑 Harry Potter-verdensmester</p>
+
+<p style="text-align:center;"><strong>Mischief Managed.</strong></p>
 
 </div>
+
+<div class="card">
+<div id="quiz"></div>
+
+<button onclick="calculateScore()">
+Se resultat
+</button>
+</div>
+
+<div class="card" id="result">
+<div class="score" id="score"></div>
+<h2 id="title"></h2>
+<p id="message"></p>
+</div>
+
+</div>
+
+<script>
+
+const questions = [
+
+{
+q:"Hvad er fornavnet på professor Trelawney?",
+a:["Sybill","Cassandra","Melinda","Ariana"],
+c:0
+},
+{
+q:"Hvem gav Harry tovejsspejlet?",
+a:["Dumbledore","Sirius Black","Lupin","Moody"],
+c:1
+},
+{
+q:"Hvad var det første kodeord til Gryffindors opholdsstue i bog 1?",
+a:["Fortuna Major","Pigsnout","Caput Draconis","Mimbulus"],
+c:2
+},
+{
+q:"Hvad hedder Aragogs kone?",
+a:["Mosag","Ariana","Merope","Nagini"],
+c:0
+},
+{
+q:"Hvad er Hermione Grangers mellemnavn?",
+a:["Jane","Jean","Joan","June"],
+c:1
+},
+{
+q:"Hvilket fag underviser Charity Burbage i?",
+a:["Runer","Mugglerstudier","Alkymi","Aritmansi"],
+c:1
+},
+{
+q:"Hvad hedder Luna Lovegoods far?",
+a:["Xenophilius","Septimus","Xavier","Regulus"],
+c:0
+},
+{
+q:"Hvem er R.A.B.?",
+a:["Regulus Arcturus Black","Rufus Albert Bones","Remus A Black","Rabastan Black"],
+c:0
+},
+{
+q:"Hvad er Bellatrix Lestranges pigenavn?",
+a:["Gaunt","Rosier","Black","Burke"],
+c:2
+},
+{
+q:"Hvilken eliksir giver held?",
+a:["Veritaserum","Felix Felicis","Amortentia","Polyjuice"],
+c:1
+},
+{
+q:"Hvilket nummer har huset på Grimmauld Plads?",
+a:["11","12","13","14"],
+c:1
+},
+{
+q:"Hvilken drage møder Harry i første prøve?",
+a:["Ungarsk Hornhale","Kinesisk Ildkugle","Svensk Kortsnude","Walisisk Grøn"],
+c:0
+},
+{
+q:"Hvad er nummeret på Harrys hvælving i Gringotts?",
+a:["394","713","687","217"],
+c:2
+},
+{
+q:"Hvilken Horcrux ødelægger Hermione med en basilisktand?",
+a:["Nagini","Diademet","Bægeret","Dagbogen"],
+c:2
+},
+{
+q:"Hvad siger Ollivander om Harrys tryllestav?",
+a:["Den valgte dig","Mærkelige ting sker","Broderen gav dig arret","Skæbnen bestemte"],
+c:2
+},
+{
+q:"Hvad hedder Merope Gaunts far?",
+a:["Marvolo","Morfin","Caractacus","Corvinus"],
+c:0
+},
+{
+q:"Hvem underviste i Forsvar mod Mørkets Kræfter i Harrys tredje år?",
+a:["Snape","Moody","Lupin","Lockhart"],
+c:2
+},
+{
+q:"Hvilket dyr er Hufflepuffs symbol?",
+a:["Ræv","Ørn","Løve","Grævling"],
+c:3
+},
+{
+q:"Hvad hedder Rons rotte?",
+a:["Trevor","Scabbers","Crookshanks","Pig"],
+c:1
+},
+{
+q:"Hvem dræber Dobby?",
+a:["Bellatrix","Voldemort","Lucius","Nagini"],
+c:0
+},
+{
+q:"Hvad hedder Dumbledores føniks?",
+a:["Firenze","Aragog","Fawkes","Buckbeak"],
+c:2
+},
+{
+q:"Hvem var den yngste søger i et århundrede på Hogwarts?",
+a:["Cedric","Draco","Harry","Charlie"],
+c:2
+},
+{
+q:"Hvilken centaur underviser i Spådomskunst?",
+a:["Magorian","Bane","Firenze","Ronan"],
+c:2
+},
+{
+q:"Hvilken gave efterlader Dumbledore til Ron?",
+a:["Deluminatoren","Et ur","En bog","Et sværd"],
+c:0
+},
+{
+q:"Hvem ejede den Ældste Tryllestav før Dumbledore?",
+a:["Grindelwald","Voldemort","Snape","Gregorovitch"],
+c:0
+},
+{
+q:"Hvad hedder Harrys søn opkaldt efter Snape?",
+a:["James Sirius","Albus Severus","Remus Potter","Albus James"],
+c:1
+},
+{
+q:"Hvilken professor underviser i Forvandling?",
+a:["Sprout","McGonagall","Flitwick","Sinistra"],
+c:1
+},
+{
+q:"Hvem åbner Hemmelighedernes Kammer i Harrys andet år?",
+a:["Harry","Tom Riddle","Ginny Weasley","Draco Malfoy"],
+c:2
+},
+{
+q:"Hvad hedder Fleur Delacours søster?",
+a:["Victoire","Gabrielle","Apolline","Dominique"],
+c:1
+},
+{
+q:"Hvad er Dumbledores fulde navn?",
+a:[
+"Albus Percival Wulfric Brian Dumbledore",
+"Albus Wulfric Brian Dumbledore",
+"Albus Percival Brian Dumbledore",
+"Albus Wulfric Percival Dumbledore"
+],
+c:0
+}
+
+];
+
+const quiz=document.getElementById("quiz");
+
+questions.forEach((question,index)=>{
+
+let html=`<div class="question">
+<h3>${index+1}. ${question.q}</h3>`;
+
+question.a.forEach((answer,i)=>{
+html += `
+<label>
+<input type="radio" name="q${index}" value="${i}">
+${answer}
+</label>`;
+});
+
+html += `</div>`;
+
+quiz.innerHTML += html;
+
+});
+
+function calculateScore(){
+
+let score=0;
+
+questions.forEach((question,index)=>{
+
+const checked=document.querySelector(
+`input[name="q${index}"]:checked`
+);
+
+if(checked && Number(checked.value)===question.c){
+score++;
+}
+
+});
+
+let title="";
+let message="";
+
+if(score<=14){
+title="🧹 Muggler";
+message="Der er vist gået lidt for meget julehygge og lidt for lidt Hogwarts i den.";
+}
+else if(score<=22){
+title="⚡ Troldmand under uddannelse";
+message="Bestået. Men der mangler lidt, før professorerne bliver imponerede.";
+}
+else if(score<=27){
+title="🧙 Hogwarts-præfekt";
+message="Imponerende! Du har helt styr på magiens verden.";
+}
+else if(score<=29){
+title="📚 Professor i Magiens Historie";
+message="Det her er seriøst nørdet. Meget seriøst nørdet.";
+}
+else{
+title="👑 HARRY POTTER-VERDENSMESTER";
+message="Du har sandsynligvis læst bøgerne flere gange end de fleste mennesker på Jorden.";
+}
+
+document.getElementById("result").style.display="block";
+document.getElementById("score").innerText=score + " / 30";
+document.getElementById("title").innerText=title;
+document.getElementById("message").innerText=message;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+}
+
+</script>
+
+</body>
+</html>
