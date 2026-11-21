@@ -1,154 +1,51 @@
-const questions = [
+<div class="card intro">
 
-{
-q:"Hvad hedder Harry Potters ugle?",
-a:["Hedwig","Errol","Crookshanks","Pigwidgeon"],
-c:0
-},
-{
-q:"Hvilket kollegium kommer Harry på?",
-a:["Ravenclaw","Hufflepuff","Slytherin","Gryffindor"],
-c:3
-},
-{
-q:"Hvad hedder Harrys bedste ven?",
-a:["Neville Longbottom","Ron Weasley","Dean Thomas","Seamus Finnigan"],
-c:1
-},
-{
-q:"Hvad hedder Harrys bedste veninde?",
-a:["Cho Chang","Ginny Weasley","Hermione Granger","Luna Lovegood"],
-c:2
-},
-{
-q:"Hvad hedder skolen for heksekunst og troldmandsskab?",
-a:["Durmstrang","Beauxbatons","Ilvermorny","Hogwarts"],
-c:3
-},
-{
-q:"Hvilken professor underviser i eliksirer i de første bøger?",
-a:["Lupin","Slughorn","Snape","Flitwick"],
-c:2
-},
-{
-q:"Hvilket dyr er maskot for Gryffindor?",
-a:["Løve","Grævling","Ørn","Slange"],
-c:0
-},
-{
-q:"Hvad hedder kæmpen som er skovfoged på Hogwarts?",
-a:["Grawp","Karkus","Hagrid","Fang"],
-c:2
-},
-{
-q:"Hvilken sport spiller Harry som søger?",
-a:["Gobsten","Quidditch","Troldmandsskak","Exploding Snap"],
-c:1
-},
-{
-q:"Hvilken genstand skal man gribe for at afslutte en Quidditch-kamp?",
-a:["Quaffle","Broomstick","Gyldne Lyn","Bludger"],
-c:2
-},
-{
-q:"Hvem er rektor på Hogwarts i størstedelen af serien?",
-a:["Snape","McGonagall","Dumbledore","Flitwick"],
-c:2
-},
-{
-q:"Hvad hedder Voldemort oprindeligt?",
-a:["Tom Marvolo Riddle","Morfin Gaunt","Barty Crouch","Regulus Black"],
-c:0
-},
-{
-q:"Hvilket kollegium tilhører Draco Malfoy?",
-a:["Hufflepuff","Ravenclaw","Slytherin","Gryffindor"],
-c:2
-},
-{
-q:"Hvem er vogter af nøgler og områder på Hogwarts?",
-a:["Filch","Hagrid","Moody","Snape"],
-c:1
-},
-{
-q:"Hvad hedder fængslet for troldmænd?",
-a:["Nurkengard","Azkaban","Durmstrang","Diagonstræde"],
-c:1
-},
-{
-q:"Hvilken skabning vogter De Vises Sten?",
-a:["Drage","Trold","Trehovedet hund","Basilisk"],
-c:2
-},
-{
-q:"Hvad hedder Harrys usynlighedskappe?",
-a:["Skyggekappen","Den usynlige kappe","Dødskappen","Den har intet særligt navn"],
-c:3
-},
-{
-q:"Hvem dræber Dobby?",
-a:["Lucius Malfoy","Bellatrix Lestrange","Voldemort","Nagini"],
-c:1
-},
-{
-q:"Hvem underviser i Forsvar mod Mørkets Kræfter i bog 3?",
-a:["Snape","Lockhart","Lupin","Moody"],
-c:2
-},
-{
-q:"Hvad hedder føniksen som tilhører Dumbledore?",
-a:["Fawkes","Buckbeak","Norbert","Aragog"],
-c:0
-},
-{
-q:"Hvilken familie tilhører Sirius Black?",
-a:["Potter","Black","Malfoy","Lestrange"],
-c:1
-},
-{
-q:"Hvem er Harrys gudfar?",
-a:["Remus Lupin","Arthur Weasley","Sirius Black","Alastor Moody"],
-c:2
-},
-{
-q:"Hvilken genstand ødelægger Harry til sidst Voldemort med?",
-a:["Gryffindors sværd","Den ældste tryllestav","En basilisktand","En horcrux"],
-c:1
-},
-{
-q:"Hvad hedder banken i troldmandsverdenen?",
-a:["Gringotts","Wizard Bank","Goblin Trust","Diagon Vault"],
-c:0
-},
-{
-q:"Hvilket dyr er Hufflepuffs maskot?",
-a:["Løve","Ravn","Grævling","Slange"],
-c:2
-},
-{
-q:"Hvad hedder Hermiones kat?",
-a:["Scabbers","Trevor","Crookshanks","Mrs Norris"],
-c:2
-},
-{
-q:"Hvem er Halvblodsprinsen?",
-a:["Harry Potter","Tom Riddle","Severus Snape","Draco Malfoy"],
-c:2
-},
-{
-q:"Hvor mange Dødsregalier findes der?",
-a:["2","3","4","5"],
-c:1
-},
-{
-q:"Hvilken af disse er IKKE en Dødsregalie?",
-a:["Den usynlige kappe","Genopstandelsesstenen","Den ældste tryllestav","Gryffindors sværd"],
-c:3
-},
-{
-q:"Hvem bliver rektor på Hogwarts efter slaget om Hogwarts?",
-a:["Kingsley Shacklebolt","Severus Snape","Minerva McGonagall","Horace Slughorn"],
-c:2
-}
+<h2>⚡🎄 Glædelig jul, Basse ❤️</h2>
 
-];
+<p>
+Der findes Harry Potter-fans.
+</p>
+
+<p>
+Og så findes der mennesker, der kan citere filmene ordret, ved hvilket kapitel Sirius Black første gang nævnes i bøgerne, og som stadig inderst inde håber, at Hogwarts-brevet en dag dukker op.
+</p>
+
+<p>
+Du har set filmene flere gange, end jeg kan tælle.
+</p>
+
+<p>
+Du har læst bøgerne så mange gange, at de nærmest burde tælle som en officiel uddannelse.
+</p>
+
+<p>
+Derfor er dette ikke en almindelig Harry Potter-quiz.
+</p>
+
+<p>
+Det er en test af, om du virkelig er så stor en Harry Potter-nørd, som du påstår.
+</p>
+
+<p>
+De første spørgsmål burde være nemme.
+<br>
+De sidste spørgsmål kan koste både huspoint og værdighed.
+</p>
+
+<p>
+Så find tryllestaven frem, tag plads i Den Store Sal, og lad os én gang for alle finde ud af, om du er...
+</p>
+
+<h3>⚡ En almindelig troldmand</h3>
+
+<h3>🧙 Hogwarts-præfekt</h3>
+
+<h3>📚 Professor i Magiens Historie</h3>
+
+<h3>👑 Eller den ubestridte Harry Potter-verdensmester</h3>
+
+<p style="text-align:center;font-weight:bold;font-size:1.2em;">
+Mischief Managed.
+</p>
+
+</div>
